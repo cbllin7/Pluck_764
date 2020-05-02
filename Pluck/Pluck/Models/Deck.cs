@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pluck.Models
 {
-    class Deck
+    public class Deck
     {
         public IEnumerable<Card> Cards { get; set; }
     }

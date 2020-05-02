@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pluck.Models
 {
-    class Card
+    public class Card
     {
         public Suit Suit { get; set; }
         public CardValue Value { get; set; }

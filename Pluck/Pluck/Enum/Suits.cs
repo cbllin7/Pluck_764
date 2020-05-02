@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pluck.Enum
 {
-    enum Suits
+    public enum Suits
     {
         Club,
         Diamond,

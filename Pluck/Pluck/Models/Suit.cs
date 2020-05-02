@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pluck.Models
 {
-    class Suit
+    public class Suit
     {
         public Suits CardSuit { get; set; }
         public bool IsTrump { get; set; }

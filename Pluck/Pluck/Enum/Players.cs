@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pluck.Enum
 {
-    enum Players
+    public enum Players
     {
         Dealer,
         FourSpot,

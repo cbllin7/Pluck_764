@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Pluck.Models
 {
-    class CardValue
+    public class CardValue
     {
         public CardValues Value { get; set; }
     }

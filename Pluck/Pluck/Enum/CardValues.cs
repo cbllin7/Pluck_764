@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pluck.Enum
 {
-    enum CardValues
+    public enum CardValues
     {
         Two,
         Three,
