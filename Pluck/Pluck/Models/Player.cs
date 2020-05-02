@@ -8,5 +8,8 @@ namespace Pluck.Models
     class Player
     {
         public Players CardPlayer { get; set; }
+        public bool IsUser { get; set; }
+        public int Book { get; set; }
+        public int Score { get; set; }
     }
 }
