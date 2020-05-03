@@ -7,11 +7,19 @@ namespace Pluck.Models
 {
     public class Player
     {
-        public Players CardPlayer { get; set; }
-        public IEnumerable<Card> Hand { get; set; }
-        public bool IsUser { get; set; }
-        public int Book { get; set; }
-        public int Score { get; set; }
-        public IEnumerable<string> Quotes { get; set; }
+        public Player(Hand playerHand, bool isUser, int books, string speak, int score)
+        {
+            Hand = playerHand;
+            IsUser = isUser;
+            Books = books;
+            Score = score;
+
+        }
+        protected Hand Hand { get; set; }
+        protected bool IsUser { get; set; }
+        protected int Books { get; set; }
+        protected int Score { get; set; }
+        protected IEnumerable<string> Quotes { get; set; }
+
     }
 }

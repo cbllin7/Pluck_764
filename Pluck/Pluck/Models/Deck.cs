@@ -7,6 +7,10 @@ namespace Pluck.Models
 {
     public class Deck
     {
-        public IEnumerable<Card> Cards { get; set; }
+        public Deck(IEnumerable<Card> deckOfCards)
+        {
+            Cards = deckOfCards;
+        }
+        protected IEnumerable<Card> Cards { get; set; }
     }
 }
