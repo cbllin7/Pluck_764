@@ -5,11 +5,11 @@ namespace Pluck.Services
 {
     public interface IPlayerService
     {
-        IEnumerable<Card> OrderHand(Player player);
-        Card PlayCard(Player player);
-        string TalkingPlayer(Player player);
-        IEnumerable<Card> CollectBook(Player player);
+        Hand OrderHand(Player player);
+        Card PlayCard(Player player, string cardToPlay);
+        string TalkingPlayer(Player player, int quoteChoosen);
+        IEnumerable<Card> CollectBook(Player player, IEnumerable<Card> ActiveCardPlay);
         int WinBook(Player player);
-        int TallyScore(Player player);
+        void TallyScore(IList<Player> players);
     }
 }

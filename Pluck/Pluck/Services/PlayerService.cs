@@ -1,35 +1,40 @@
 ﻿using Pluck.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Pluck.Services
 {
     public class PlayerService : IPlayerService
     {
-        public IEnumerable<Card> CollectBook(Player player)
+        public IEnumerable<Card> CollectBook(Player player, IEnumerable<Card> ActiveCardPlay)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Card> OrderHand(Player player)
+        public Hand OrderHand(Player player)
         {
             throw new NotImplementedException();
         }
 
-        public Card PlayCard(Player player)
+        public Card PlayCard(Player player, string cardToPlay)
         {
-            throw new NotImplementedException();
+            Card playingCard = player.Hand.PlayerHand.Where(x => x.CardName == cardToPlay).FirstOrDefault();
+            return playingCard;
         }
 
-        public string TalkingPlayer(Player player)
+        public string TalkingPlayer(Player player, int quoteChoosen)
         {
-            throw new NotImplementedException();
+            return player.Quotes[quoteChoosen];
         }
 
-        public int TallyScore(Player player)
+        public void TallyScore(IList<Player> players)
         {
-            throw new NotImplementedException();
+            foreach(Player player in players)
+            {
+                player.Score += (player.Books * 10);
+            }
         }
 
         public int WinBook(Player player)

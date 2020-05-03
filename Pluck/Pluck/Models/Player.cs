@@ -15,11 +15,11 @@ namespace Pluck.Models
             Score = score;
 
         }
-        protected Hand Hand { get; set; }
-        protected bool IsUser { get; set; }
-        protected int Books { get; set; }
-        protected int Score { get; set; }
-        protected IEnumerable<string> Quotes { get; set; }
+        public Hand Hand { get; set; }
+        public bool IsUser { get; set; }
+        public int Books { get; set; }
+        public int Score { get; set; }
+        public IList<string> Quotes { get; set; }
 
     }
 }
