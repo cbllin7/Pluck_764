@@ -11,5 +11,6 @@ namespace Pluck.Services
         IEnumerable<Card> CollectBook(Player player, IEnumerable<Card> ActiveCardPlay);
         int WinBook(Player player);
         void TallyScore(IList<Player> players);
+        void RemoveCardFromHand(Player player, string cardToRemove);
     }
 }

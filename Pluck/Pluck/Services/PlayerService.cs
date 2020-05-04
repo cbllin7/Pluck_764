@@ -24,6 +24,10 @@ namespace Pluck.Services
             return playingCard;
         }
 
+        public void RemoveCardFromHand(Player player, string cardToRemove)
+        {
+        }
+
         public string TalkingPlayer(Player player, int quoteChoosen)
         {
             return player.Quotes[quoteChoosen];
