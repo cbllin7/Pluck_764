@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pluck.Enum
+namespace Pluck.Enums
 {
     public enum Suits
     {

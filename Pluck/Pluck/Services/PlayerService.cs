@@ -18,14 +18,16 @@ namespace Pluck.Services
             throw new NotImplementedException();
         }
 
-        public Card PlayCard(Player player, string cardToPlay)
+        public Card PlayCard(Player player, int cardToPlay)
         {
-            Card playingCard = player.Hand.PlayerHand.Where(x => x.CardName == cardToPlay).FirstOrDefault();
+            Card playingCard = player.Hand.PlayerHand[cardToPlay];
+            RemoveCardFromHand(player.Hand.PlayerHand, playingCard);
             return playingCard;
         }
 
-        public void RemoveCardFromHand(Player player, string cardToRemove)
+        public void RemoveCardFromHand(IList<Card> cards, Card cardToRemove)
         {
+            cards.Remove(cardToRemove);
         }
 
         public string TalkingPlayer(Player player, int quoteChoosen)
