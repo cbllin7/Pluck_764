@@ -7,6 +7,6 @@ namespace Pluck.Models
 {
     public class Deck
     {
-        public IList DeckOfCards { get; set; }
+        public IList<Card> DeckOfCards { get; set; }
     }
 }

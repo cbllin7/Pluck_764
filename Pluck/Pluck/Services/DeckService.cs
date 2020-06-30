@@ -14,11 +14,17 @@ namespace Pluck.Services
             var cards = new List<Card>();
             foreach (Suits suit in Enum.GetValues(typeof(Suits)))
             {
-                foreach (CardValues cardValue in Enum.GetValues(typeof(CardValues)))
+                if (!(suit == Suits.Joker))
                 {
-                    cards.Add(new Card(suit, cardValue));
+                    foreach (CardValues cardValue in Enum.GetValues(typeof(CardValues)))
+                    {
+                        if (cardValue != CardValues.LittleJoker || cardValue != CardValues.BigJoker)
+                        cards.Add(new Card(suit, cardValue));
+                    }
                 }
             }
+            cards.Add(new Card(Suits.Joker, CardValues.LittleJoker));
+            cards.Add(new Card(Suits.Joker, CardValues.BigJoker));
             deck.DeckOfCards = cards;
             return deck;
         }
@@ -34,9 +40,14 @@ namespace Pluck.Services
                 deck.DeckOfCards[index] = temp;
             }
         }
-        public void DealCards(Deck deck)
+        public void DealCards(Deck deck, List<Player> players)
         {
-            throw new NotImplementedException();
+            var deckCount = 0;
+            foreach(Player player in players)
+            {
+                for (var cardCount = 0; cardCount < 17; deckCount++)
+                    player.Hand.PlayerHand.Add(deck.DeckOfCards[deckCount]);
+            }
         }
 
     }

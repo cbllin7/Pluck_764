@@ -7,6 +7,6 @@ namespace Pluck.Services
 {
     interface ICardService
     {
-        int GetCardID(Card card);
+        string GetCardName(Card card);
     }
 }

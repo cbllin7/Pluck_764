@@ -9,6 +9,7 @@ namespace Pluck.Enums
         Club,
         Diamond,
         Heart,
-        Spade
+        Spade,
+        Joker
     }
 }

@@ -20,6 +20,6 @@ namespace Pluck.Models
         public int Books { get; set; }
         public int Score { get; set; }
         public IList<string> Quotes { get; set; }
-
+        public IList<List<Card>> CollectedBooks { get; set; } 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Pluck.Models;
+﻿using Pluck.Enums;
+using Pluck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +9,17 @@ namespace Pluck.Services
 {
     public class PlayerService : IPlayerService
     {
-        public IEnumerable<Card> CollectBook(Player player, IEnumerable<Card> ActiveCardPlay)
+        public void CollectBook(Player player, List<Card> ActiveCardPlay)
         {
-            throw new NotImplementedException();
+            player.CollectedBooks.Add(ActiveCardPlay);
         }
 
-        public Hand OrderHand(Player player)
+        public void OrderHand(Player player)
         {
-            throw new NotImplementedException();
+            var cards = player.Hand.PlayerHand
+                .GroupBy(x => x.Suit)
+                .OrderByDescending(x => x.Count())
+                .SelectMany(x => x.OrderByDescending(y => y.Value));
         }
 
         public Card PlayCard(Player player, int cardToPlay)
@@ -43,9 +47,9 @@ namespace Pluck.Services
             }
         }
 
-        public int WinBook(Player player)
+        public void WinBook(Player player)
         {
-            throw new NotImplementedException();
+            player.Books++;
         }
     }
 }

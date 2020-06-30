@@ -1,4 +1,5 @@
 ﻿using Pluck.Models;
+using System.Collections.Generic;
 
 namespace Pluck.Services
 {
@@ -6,6 +7,6 @@ namespace Pluck.Services
     {
         Deck GetDeck();
         void ShuffleDeck(Deck deck);
-        void DealCards(Deck deck);
+        void DealCards(Deck deck, List<Player> players);
     }
 }
