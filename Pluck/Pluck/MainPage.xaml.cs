@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pluck.Pages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace Pluck
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        async void onStartGame(object sender, EventArgs e)
+        {
+            var menuPage = new MenuPage();
+            await Navigation.PushModalAsync(menuPage);
         }
     }
 }
